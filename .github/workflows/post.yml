@@ -1,9 +1,9 @@
 name: "Post to Bluesky"
 
-on: workflow_dispatch
-# on:
-#   schedule:
-#     - cron: "30 5,17 * * *"
+on: 
+  workflow_dispatch:
+  schedule:
+   - cron: "*/45 * * * *"
 
 jobs:
   build:
@@ -21,3 +21,4 @@ jobs:
         env:
           BSKY_HANDLE: ${{ secrets.BSKY_HANDLE }}
           BSKY_PASSWORD: ${{ secrets.BSKY_PASSWORD }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
